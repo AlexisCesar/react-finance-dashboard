@@ -4,6 +4,11 @@
 <p>💰 Finance dashboard application build with React 💻</p>
 </div>
 
+## 🚀 Starting
+
+### Requirements
+- NodeJS
+
 ### Installing dependencies
 
 Inside root folder (using yarn as package manager):
@@ -18,3 +23,9 @@ Inside the project's folder:
 yarn dev
 ```
 Then open your browser at the specified link in the console.
+
+## 🛠 Build with
+
+- React
+- Typescript
+- Sass
