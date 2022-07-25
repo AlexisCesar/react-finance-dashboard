@@ -1,5 +1,4 @@
 describe('collection or component name', () => {
-
     it('should sum', () => {
         let expected = 2;
         expect(1 + 1).toBe(expected);
@@ -7,5 +6,4 @@ describe('collection or component name', () => {
 
     it.todo('todo test');
     it.todo('🥑');
-
 });
