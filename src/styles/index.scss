@@ -1,0 +1,28 @@
+:root {
+  --background: #e5e5e5;
+  --blue: #5429cc;
+  --green: #33cc95;
+  --red: #e52e4d;
+  --shape-principal: #ffffff;
+  --title: #363f5f;
+  --text: #969cb2;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+
+  padding: 0;
+  margin: 0;
+
+  background-color: var(--background);
+  color: var(--text);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--title);
+  }
+}
