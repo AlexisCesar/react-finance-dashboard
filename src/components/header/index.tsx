@@ -1,7 +1,16 @@
 import style from './header.module.scss';
 import coinLogo from '../../assets/images/coinLogo.png';
+import { Dispatch, SetStateAction } from 'react';
 
-export const Header = () => {
+interface Props {
+  setModalVisible: Dispatch<SetStateAction<boolean>>;
+}
+
+export const Header = ({ setModalVisible }: Props) => {
+  const handleOpenModal = () => {
+    setModalVisible(true);
+  };
+
   return (
     <header className={style['container-header']}>
       <div className={style['container-logo']}>
@@ -9,7 +18,7 @@ export const Header = () => {
           <img src={coinLogo}></img>
           <h1 className={style['title']}>financiados</h1>
         </div>
-        <button>
+        <button onClick={handleOpenModal}>
           <span className={style['label']}>Nova Transação</span>
           <span className={style['icon']}>
             <svg
