@@ -1,4 +1,7 @@
 import style from './modal.module.scss';
+import incomeIcon from "../../assets/images/income.png";
+import outcomeIcon from "../../assets/images/outcome.png";
+import closeIcon from "../../assets/images/close-button.png";
 
 export const Modal = () => {
   return (
@@ -6,7 +9,7 @@ export const Modal = () => {
       <div className={style["modal-wrapper"]}>
         <div className={style["modal-box"]}>
           <span>
-            <img src="src\assets\images\close-button.png" />
+            <img src={closeIcon} />
           </span>
           <h2>Create Transaction</h2>
           <form>
@@ -15,11 +18,11 @@ export const Modal = () => {
 
             <div className={style["transaction-type"]}>
               <button className={style["income"]}>
-                <img src="src\assets\images\income.png" />
+                <img src={incomeIcon} />
                 Income
               </button>
               <button className={style["outcome"]}>
-                <img src="src\assets\images\outcome.png" />
+                <img src={outcomeIcon}/>
                 Outcome
               </button>
             </div>
