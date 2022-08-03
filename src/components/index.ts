@@ -1,7 +1,5 @@
-import { Example } from './Example';
 import { Modal } from "./Modal";
+import { Card } from "./Card";
 
-export {
-  Example,
-  Modal
-};
+export { Modal, Card };
+
