@@ -1,12 +1,16 @@
 import { Card } from '../../components';
-import { Table } from '../../components/Table';
 import style from './Home.module.scss';
-import { Header } from '../../components/header';
+import { Header } from '../../components/Header';
+import { Table } from '../../components/Table';
 
 export const Home = () => {
   return (
-    <div className={style['container']}>
-      <Card />
+    <div>
+      <Header />
+      <div className={style['container']}>
+        <Card />
+      </div>
+      <Table />
     </div>
   );
 };

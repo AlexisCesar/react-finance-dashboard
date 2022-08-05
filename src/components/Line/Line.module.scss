@@ -1,6 +1,14 @@
 .line{
     td{
-        background-color: #ffffff;
+        background-color: var(--background-line);
         padding: 16px 32px;
     }
+}
+
+.positive-value{
+    color: var(--green);
+}
+
+.negative-value{
+    color: var(--red);
 }

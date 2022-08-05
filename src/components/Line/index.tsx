@@ -1,12 +1,25 @@
-import style from './Line.module.scss'
+import style from './Line.module.scss';
 
-export const Line = () => {
+interface LineProps{
+    title: string,
+    value: string,
+    category: string, 
+    date: string
+}
+
+export const Line = ({title, value, category, date} : LineProps) => {
+    const negativeColor = value.includes("-") ? "negative-value" : "positive-value";
+    const formatValue = new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+    }).format(Number(value));
+    
     return (
         <tr className={style.line}>
-            <td>Desenvolvimento de site</td>
-            <td>R$ 12.000,00</td>
-            <td>Venda</td>
-            <td>13/04/2021</td>
+            <td>{title}</td>
+            <td className={style[negativeColor]}>{formatValue}</td>
+            <td>{category}</td>
+            <td>{date}</td>
         </tr>
     );
 };
