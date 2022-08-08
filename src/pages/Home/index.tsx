@@ -1,6 +1,7 @@
 import { Card } from '../../components';
 import style from './Home.module.scss';
-import { Header } from '../../components/header';
+import { Header } from '../../components/Header';
+import { Table } from '../../components/Table';
 
 export const Home = () => {
   return (
@@ -9,6 +10,7 @@ export const Home = () => {
       <div className={style['container']}>
         <Card />
       </div>
+      <Table />
     </div>
   );
 };
