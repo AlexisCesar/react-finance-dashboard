@@ -1,13 +1,13 @@
 .card {
-    background-color: var(--shape-principal);
-    color: black;
+    background-color: var(--white-900);
+    color: var(--black-900);
     padding: 1.5rem 2rem;
     border-radius: 0.25rem; 
   }
 
   .total {
-    background: var(--green);
-    color: var(--shape-principal);
+    background: var(--green-900);
+    color: var(--white-900);
   }
     
     .header {

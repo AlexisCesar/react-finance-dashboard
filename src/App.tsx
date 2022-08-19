@@ -1,10 +1,13 @@
 import './App.scss';
+import { TransactionsContextProvider } from './context/TransactionsContext';
 import { Home } from './pages';
 
 const App = () => {
   return (
     <div className="App">
-      <Home />
+      <TransactionsContextProvider>
+        <Home />
+      </TransactionsContextProvider>
     </div>
   );
 };
