@@ -7,7 +7,15 @@ export const TransactionsContext = createContext({
 });
 
 export const TransactionsContextProvider = ({ children }: any) => {
-  const [transactions, setTransactions] = useState<Transaction[]>([]);
+  const [transactions, setTransactions] = useState<Transaction[]>([
+    {
+      description: "Hamburger",
+      value: -300,
+      type: 0,
+      category: "Food",
+      date: new Date()
+    }
+  ]);
 
   function addTransaction(transaction: Transaction) {
     setTransactions((prev) => [...prev, transaction]);
