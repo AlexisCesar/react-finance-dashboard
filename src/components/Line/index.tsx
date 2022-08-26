@@ -1,13 +1,13 @@
 import style from './Line.module.scss';
 
 interface LineProps{
-    title: string,
+    description: string,
     value: string,
     category: string, 
     date: Date
 }
 
-export const Line = ({title, value, category, date} : LineProps) => {
+export const Line = ({description, value, category, date} : LineProps) => {
     const negativeColor = value.includes("-") ? "negative-value" : "positive-value";
     const formatValue = new Intl.NumberFormat("en-US", {
         style: "currency",
@@ -18,7 +18,7 @@ export const Line = ({title, value, category, date} : LineProps) => {
     
     return (
         <tr className={style.line}>
-            <td>{title}</td>
+            <td>{description}</td>
             <td className={style[negativeColor]}>{formatValue}</td>
             <td>{category}</td>
             <td>{formatDate}</td>
