@@ -16,10 +16,10 @@ export const Header = ({ setModalVisible }: Props) => {
       <div className={style['container-logo']}>
         <div>
           <img src={coinLogo}></img>
-          <h1 className={style['title']}>financiados</h1>
+          <h1 className={style['title']}>Financiados</h1>
         </div>
         <button onClick={handleOpenModal}>
-          <span className={style['label']}>Nova Transação</span>
+          <span className={style['label']}>New Transaction</span>
           <span className={style['icon']}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
