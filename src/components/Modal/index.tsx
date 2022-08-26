@@ -1,6 +1,6 @@
 import style from './modal.module.scss';
-import incomeIcon from '../../assets/images/income.png';
-import outcomeIcon from '../../assets/images/outcome.png';
+import inflowIcon from '../../assets/images/inflow.png';
+import outflowIcon from '../../assets/images/outflow.png';
 import closeIcon from '../../assets/images/close-button.png';
 import { useState } from 'react';
 import { TransactionType } from '../../interfaces/enums';
@@ -17,7 +17,7 @@ export const Modal = ({ setModalVisible }: Props) => {
   const [transactionName, setTransactionName] = useState<string>('');
   const [transactionValue, setTransactionValue] = useState<number>(0);
   const [transactionType, setTransactionType] = useState<TransactionType>(
-    TransactionType.INBOUND
+    TransactionType.INFLOW
   );
   const [transactionCategory, setTransactionCategory] = useState<string>('');
 
@@ -30,7 +30,7 @@ export const Modal = ({ setModalVisible }: Props) => {
       description: transactionName,
       type: transactionType,
       value:
-        transactionType == TransactionType.INBOUND
+        transactionType == TransactionType.INFLOW
           ? transactionValue
           : transactionValue * -1,
     };
@@ -39,7 +39,7 @@ export const Modal = ({ setModalVisible }: Props) => {
 
     setTransactionName('');
     setTransactionValue(0);
-    setTransactionType(TransactionType.INBOUND);
+    setTransactionType(TransactionType.INFLOW);
     setTransactionCategory('');
 
     setModalVisible(false);
@@ -86,33 +86,31 @@ export const Modal = ({ setModalVisible }: Props) => {
 
             <div className={style['transaction-type']}>
               <button
-                className={style['income']}
                 onClick={(e) => {
                   e.preventDefault();
-                  setTransactionType(TransactionType.INBOUND);
+                  setTransactionType(TransactionType.INFLOW);
                 }}
               >
-                <img src={incomeIcon} />
-                Income
+                <img src={inflowIcon} />
+                Inflow
               </button>
 
               <button
-                className={style['outcome']}
                 onClick={(e) => {
                   e.preventDefault();
-                  setTransactionType(TransactionType.OUTBOUND);
+                  setTransactionType(TransactionType.OUTFLOW);
                 }}
               >
-                <img src={outcomeIcon} />
-                Outcome
+                <img src={outflowIcon} />
+                Outflow
               </button>
             </div>
 
             <p>
               Selected type:{' '}
-              {transactionType == TransactionType.INBOUND
-                ? 'Income'
-                : 'Outcome'}
+              {transactionType == TransactionType.INFLOW
+                ? 'Inflow'
+                : 'Outflow'}
             </p>
 
             <label>
