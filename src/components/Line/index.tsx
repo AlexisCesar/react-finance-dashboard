@@ -4,7 +4,7 @@ interface LineProps{
     title: string,
     value: string,
     category: string, 
-    date: string
+    date: Date
 }
 
 export const Line = ({title, value, category, date} : LineProps) => {
@@ -13,13 +13,15 @@ export const Line = ({title, value, category, date} : LineProps) => {
         style: "currency",
         currency: "BRL"
     }).format(Number(value));
+
+    const formatDate = new Intl.DateTimeFormat("en-US").format(date);
     
     return (
         <tr className={style.line}>
             <td>{title}</td>
             <td className={style[negativeColor]}>{formatValue}</td>
             <td>{category}</td>
-            <td>{date}</td>
+            <td>{formatDate}</td>
         </tr>
     );
 };

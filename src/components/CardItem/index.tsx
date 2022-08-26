@@ -9,6 +9,7 @@ interface CardItemProps {
 
 export const CardItem = ({ title, value, icon, total } : CardItemProps) => {
     const totalCard = total ? `${style.total} ${style.card}` : style.card
+    
     return (
         <div className={totalCard}>
         <div className={style['header']}>
@@ -16,7 +17,7 @@ export const CardItem = ({ title, value, icon, total } : CardItemProps) => {
           <img src={icon} />
         </div>
         <div className={style['strong']}>
-          <span>R$ {value.toFixed(2)}</span>
+          <span>{value.toFixed(2)}</span>
         </div>
       </div>
     );
