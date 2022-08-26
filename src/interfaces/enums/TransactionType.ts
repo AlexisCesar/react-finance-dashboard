@@ -1,4 +1,4 @@
 export enum TransactionType {
-  INBOUND = 1,
-  OUTBOUND,
+  INFLOW = 1,
+  OUTFLOW = 0,
 }

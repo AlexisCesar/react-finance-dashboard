@@ -1,25 +1,25 @@
+import { FormatCurrencyUS } from '../../utils/FormatCurrency';
+import { FormatDateUS } from '../../utils/FormatDate';
 import style from './Line.module.scss';
 
 interface LineProps{
-    title: string,
+    description: string,
     value: string,
     category: string, 
-    date: string
+    date: Date
 }
 
-export const Line = ({title, value, category, date} : LineProps) => {
+export const Line = ({description, value, category, date} : LineProps) => {
     const negativeColor = value.includes("-") ? "negative-value" : "positive-value";
-    const formatValue = new Intl.NumberFormat("pt-BR", {
-        style: "currency",
-        currency: "BRL"
-    }).format(Number(value));
+    const formatValue = FormatCurrencyUS(value);
+    const formatDate = FormatDateUS(date);    
     
     return (
         <tr className={style.line}>
-            <td>{title}</td>
+            <td>{description}</td>
             <td className={style[negativeColor]}>{formatValue}</td>
             <td>{category}</td>
-            <td>{date}</td>
+            <td>{formatDate}</td>
         </tr>
     );
 };
