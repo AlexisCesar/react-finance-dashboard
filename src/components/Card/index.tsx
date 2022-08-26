@@ -11,9 +11,9 @@ export const Card = () => {
  
   return (
     <div className={style['card-container']}>
-      <CardItem title='Entradas' icon={inflowIcon} value={0.00} />
-      <CardItem title='Saídas' icon={outflowIcon} value={0.00} />
-      <CardItem title='Total' icon={balanceIcon} value={0.00} total />
+      <CardItem title='Inflow' icon={inflowIcon} value={0.00} />
+      <CardItem title='Ouflow' icon={outflowIcon} value={0.00} />
+      <CardItem title='Balance' icon={balanceIcon} value={0.00} total />
     </div>
   );
 }

@@ -1,3 +1,5 @@
+import { FormatCurrencyUS } from '../../utils/FormatCurrency';
+import { FormatDateUS } from '../../utils/FormatDate';
 import style from './Line.module.scss';
 
 interface LineProps{
@@ -9,12 +11,8 @@ interface LineProps{
 
 export const Line = ({description, value, category, date} : LineProps) => {
     const negativeColor = value.includes("-") ? "negative-value" : "positive-value";
-    const formatValue = new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD"
-    }).format(Number(value));
-
-    const formatDate = new Intl.DateTimeFormat("en-US").format(date);
+    const formatValue = FormatCurrencyUS(value);
+    const formatDate = FormatDateUS(date);    
     
     return (
         <tr className={style.line}>
