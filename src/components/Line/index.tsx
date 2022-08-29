@@ -4,13 +4,13 @@ import style from './Line.module.scss';
 
 interface LineProps{
     description: string,
-    value: string,
+    value: number,
     category: string, 
     date: Date
 }
 
 export const Line = ({description, value, category, date} : LineProps) => {
-    const negativeColor = value.includes("-") ? "negative-value" : "positive-value";
+    const negativeColor = String(value).includes("-") ? "negative-value" : "positive-value";
     const formatValue = FormatCurrencyUS(value);
     const formatDate = FormatDateUS(date);    
     
