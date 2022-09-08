@@ -1,17 +1,17 @@
 import { Line } from '../Line';
-import style from './Table.module.scss';
 import { useTransactions } from '../../hooks/useTransactions';
+import { TableContainer, TableHead } from './styles';
 
 export const Table = () => {
   const {transactions} = useTransactions();
   return (
-    <table className={style.table}>
+    <TableContainer>
       <thead>
         <tr>
-          <th>Transaction Name</th>
-          <th>Value</th>
-          <th>Category</th>
-          <th>Date</th>
+          <TableHead>Transaction Name</TableHead>
+          <TableHead>Value</TableHead>
+          <TableHead>Category</TableHead>
+          <TableHead>Date</TableHead>
         </tr>
       </thead>
       <tbody>
@@ -19,6 +19,6 @@ export const Table = () => {
           <Line description={description} value={value} category={category} date={date} />
         ))}
       </tbody>
-    </table>
+    </TableContainer>
   );
 };
