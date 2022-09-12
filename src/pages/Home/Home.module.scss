@@ -1,0 +1,28 @@
+.home-container{
+  padding-bottom: 30px;
+}
+
+.home-card-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem;
+  margin-top: -144px;
+}
+
+@keyframes modal-fade-in {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+.home-modal-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+
+  animation: modal-fade-in 0.4s;
+}
