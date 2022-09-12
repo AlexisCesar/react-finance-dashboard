@@ -1,4 +1,3 @@
-import style from './modal.module.scss';
 import inflowIcon from '../../assets/images/inflow.png';
 import outflowIcon from '../../assets/images/outflow.png';
 import closeIcon from '../../assets/images/close-button.png';
@@ -6,6 +5,7 @@ import { useState } from 'react';
 import { TransactionType } from '../../interfaces/enums';
 import { Transaction } from '../../interfaces/Transaction';
 import { useTransactions } from '../../hooks/useTransactions';
+import { ModalBox, ModalWrapper, TransactionTypeModal } from './style';
 
 interface Props {
   setModalVisible: React.Dispatch<React.SetStateAction<boolean>>;
@@ -46,9 +46,9 @@ export const Modal = ({ setModalVisible }: Props) => {
   };
 
   return (
-    <>
-      <div className={style['modal-wrapper']}>
-        <div className={style['modal-box']}>
+    <div>
+      <ModalWrapper>
+        <ModalBox>
           <span onClick={() => setModalVisible(false)}>
             <img src={closeIcon} />
           </span>
@@ -84,7 +84,7 @@ export const Modal = ({ setModalVisible }: Props) => {
               />
             </label>
 
-            <div className={style['transaction-type']}>
+            <TransactionTypeModal>
               <button
                 onClick={(e) => {
                   e.preventDefault();
@@ -104,7 +104,7 @@ export const Modal = ({ setModalVisible }: Props) => {
                 <img src={outflowIcon} />
                 Outflow
               </button>
-            </div>
+            </TransactionTypeModal>
 
             <p>
               Selected type:{' '}
@@ -125,8 +125,8 @@ export const Modal = ({ setModalVisible }: Props) => {
 
             <button type={'submit'}>Create</button>
           </form>
-        </div>
-      </div>
-    </>
+        </ModalBox>
+      </ModalWrapper>
+    </div>
   );
 };
