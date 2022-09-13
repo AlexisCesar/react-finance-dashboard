@@ -1,4 +1,4 @@
-import style from './modal.module.scss';
+//import style from './modal.module.scss';
 import inflowIcon from '../../assets/images/inflow.png';
 import outflowIcon from '../../assets/images/outflow.png';
 import closeIcon from '../../assets/images/close-button.png';

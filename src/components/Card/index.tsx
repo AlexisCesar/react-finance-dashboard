@@ -1,5 +1,5 @@
 import { CardItem } from '../CardItem';
-import style from './card.module.scss';
+//import style from './card.module.scss';
 import inflowIcon from '../../assets/images/inflow.png';
 import outflowIcon from '../../assets/images/outflow.png';
 import balanceIcon from '../../assets/images/balance.png';
