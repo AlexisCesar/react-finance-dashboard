@@ -16,7 +16,7 @@ export const Table = () => {
       </thead>
       <tbody>
         {transactions.map(({ description, value, category, date }) => (
-          <Line description={description} value={String(value)} category={category} date={date} />
+          <Line description={description} value={value} category={category} date={date} />
         ))}
       </tbody>
     </table>

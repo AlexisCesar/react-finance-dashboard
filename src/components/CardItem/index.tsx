@@ -1,5 +1,6 @@
 import { FormatCurrencyUS } from "../../utils/FormatCurrency";
 import style from "./cardItem.module.scss";
+import { TotalCard, Header, Icon, Strong } from "./styles"
 
 interface CardItemProps {
   title: string,
@@ -9,18 +10,17 @@ interface CardItemProps {
 }
 
 export const CardItem = ({ title, value, icon, total }: CardItemProps) => {
-  const totalCard = total ? `${style.total} ${style.card}` : style.card
   const formattedValue = FormatCurrencyUS(value);
 
   return (
-    <div className={totalCard}>
-      <div className={style['header']}>
+    <TotalCard total={total}>
+      <Header>
         <p>{title}</p>
-        <img src={icon} />
-      </div>
-      <div className={style['strong']}>
+        <Icon src={icon} />
+      </Header>
+      <Strong>
         <span>{formattedValue}</span>
-      </div>
-    </div>
+      </Strong>
+    </TotalCard>
   );
 }
