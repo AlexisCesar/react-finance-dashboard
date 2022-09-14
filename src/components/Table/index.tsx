@@ -3,7 +3,7 @@ import { useTransactions } from '../../hooks/useTransactions';
 import { TableContainer, TableHead } from './styles';
 
 export const Table = () => {
-  const {transactions} = useTransactions();
+  const { transactions } = useTransactions();
   return (
     <TableContainer>
       <thead>
@@ -15,8 +15,15 @@ export const Table = () => {
         </tr>
       </thead>
       <tbody>
-        {transactions.map(({ description, value, category, date }) => (
-          <Line description={description} value={value} category={category} date={date} />
+        {transactions.map(({ description, value, type, category, date }) => (
+          <Line
+            key={date.toString()}
+            description={description}
+            type={type}
+            value={value}
+            category={category}
+            date={date}
+          />
         ))}
       </tbody>
     </TableContainer>

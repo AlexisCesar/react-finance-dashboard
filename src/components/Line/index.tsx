@@ -1,25 +1,31 @@
 import { FormatCurrencyUS } from '../../utils/FormatCurrency';
 import { FormatDateUS } from '../../utils/FormatDate';
-import style from './Line.module.scss';
+import { TableData, TableRow } from './style';
 
-interface LineProps{
-    description: string,
-    value: number,
-    category: string, 
-    date: Date
+interface LineProps {
+  description: string;
+  value: number;
+  type: number;
+  category: string;
+  date: Date;
 }
 
-export const Line = ({description, value, category, date} : LineProps) => {
-    const negativeColor = String(value).includes("-") ? "negative-value" : "positive-value";
-    const formatValue = FormatCurrencyUS(value);
-    const formatDate = FormatDateUS(date);    
-    
-    return (
-        <tr className={style.line}>
-            <td>{description}</td>
-            <td className={style[negativeColor]}>{formatValue}</td>
-            <td>{category}</td>
-            <td>{formatDate}</td>
-        </tr>
-    );
+export const Line = ({
+  description,
+  value,
+  type,
+  category,
+  date,
+}: LineProps) => {
+  const formatValue = FormatCurrencyUS(value);
+  const formatDate = FormatDateUS(date);
+
+  return (
+    <TableRow>
+      <TableData>{description}</TableData>
+      <TableData transactionType={type}>{formatValue}</TableData>
+      <TableData>{category}</TableData>
+      <TableData>{formatDate}</TableData>
+    </TableRow>
+  );
 };
