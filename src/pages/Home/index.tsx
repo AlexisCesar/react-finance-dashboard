@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Modal } from '../../components';
 import { useTransactions } from '../../hooks/useTransactions';
 import style from './Home.module.scss';
-import { Header } from '../../components/header';
+import { Header } from '../../components/Header';
 import { Table } from '../../components/Table';
 
 export const Home = () => {

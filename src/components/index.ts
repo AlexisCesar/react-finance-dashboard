@@ -1,6 +1,6 @@
 import { Modal } from './Modal';
 import { Card } from './Card';
-import { Header } from './header';
+import { Header } from './Header';
 import { Line } from './Line';
 import { Table } from './Table';
 
