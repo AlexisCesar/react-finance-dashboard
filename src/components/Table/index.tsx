@@ -17,6 +17,7 @@ export const Table = () => {
       <tbody>
         {transactions.map(({ description, value, type, category, date }) => (
           <Line
+            key={date.toString()}
             description={description}
             type={type}
             value={value}
