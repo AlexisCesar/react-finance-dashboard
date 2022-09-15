@@ -50,12 +50,12 @@ export const Modal = ({ setModalVisible }: Props) => {
       <ModalWrapper>
         <ModalBox>
           <span onClick={() => setModalVisible(false)}>
-            <img src={closeIcon} />
+            <img alt="close button" src={closeIcon} />
           </span>
 
           <h2>Create Transaction</h2>
 
-          <form onSubmit={handleSubmit}>
+          <form role="form" onSubmit={handleSubmit}>
             <label>
               <input
                 type="text"
@@ -107,10 +107,7 @@ export const Modal = ({ setModalVisible }: Props) => {
             </TransactionTypeModal>
 
             <p>
-              Selected type:{' '}
-              {transactionType == TransactionType.INFLOW
-                ? 'Inflow'
-                : 'Outflow'}
+              Selected type: {transactionType == TransactionType.INFLOW ? 'Inflow' : 'Outflow'}
             </p>
 
             <label>
